@@ -3,12 +3,12 @@
     "name": "Ben - Room of Chat",
     "icons": [
       {
-        "src":"icon192.png",
+        "src":"chat small.png",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src": "icon512.png",
+        "src": "chat large.png",
         "type": "image/png",
         "sizes": "512x512"
       }

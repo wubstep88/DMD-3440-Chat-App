@@ -13,8 +13,8 @@ var version = 'v6::';
 */
 var offlineFiles = [
   '',
-  'icon192.png',
-  'icon512.png',
+  'chat small.png',
+  'chat large.png',
   'index.html',
   'main.css',
   'main.js'
