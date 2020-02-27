@@ -5,7 +5,7 @@ console.log('SERVICE WORKER: executing.');
 /* A version number is useful when updating the worker logic,
    allowing you to remove outdated cache entries during the update.
 */
-var version = 'v1::';
+var version = 'v2::';
 
 /* These resources will be downloaded and cached by the service worker
    during the installation process. If any resource fails to be downloaded,
@@ -13,8 +13,8 @@ var version = 'v1::';
 */
 var offlineFiles = [
   '',
-  'chat small.png',
-  'chat large.png',
+  'images/chat_small.png',
+  'images/chat_large.png',
   'index.html',
   'main.css',
   'main.js'
