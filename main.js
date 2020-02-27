@@ -12,7 +12,7 @@ if ('serviceWorker' in navigator) {
 }
 
 var sampleMessage = {
-  sentBy:"Joel",
+  sentBy:"Ben",
   dateStamp:"02/20/2020 at 2:49",
   text:"Hello, this is a new message."
 }
