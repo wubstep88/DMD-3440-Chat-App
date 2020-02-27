@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: purple;
     color:white;
@@ -13,4 +17,34 @@ body {
     background-color:#333;
     text-align: center;
     display: none;;
+}
+
+#chatBox {
+    width:100%;
+    position:absolute;
+    bottom:70px;
+    top:60px;
+    right:0px;
+    left:0px;
+    background:#eee;
+    border:1px solid #333;
+}
+
+#chatInput {
+    position:fixed;
+    left:0px;
+    bottom:0;
+    width:100%;
+    background-color:#ccc;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;;
+}
+
+#chatInput input {
+    width:100%;
+}
+
+#chatInput button {
+    margin:0px 10px;
 }
