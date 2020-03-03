@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="theme-color" content="#f00" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Edit Profile</title>
+        <link href="main.css" rel="stylesheet">
+        <link rel="manifest" href="manifest.json?version=2">
+    </head>
+    <body>
+        
+        <header><a href="index.html">Back</a><h1>Edit Profile</h1></header>
+        
+        <div>
+            <p><input type="text" placeholder="Display Name" name="UserName" id="usernameInput"></p>
+            <p><input type="text" placeholder="Status Message" name="StatusMessage" id="statusInput"></p>
+            <p><input type="file" id="profilePicInput" name="profilePicInput"></p>
+            <button id="profileSaveInput">Save Profile</button>
+        </div>
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+        <script src="firebase-config.js"></script>
+        <script src="register-sw.js"></script>
+        
+        <script src="profile.js?version=2"></script>
+    </body>
+</html>
