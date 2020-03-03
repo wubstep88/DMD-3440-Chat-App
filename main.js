@@ -1,3 +1,6 @@
+document.querySelector("#usernameDisplay").innerHTML = localStorage.getItem("userName");
+document.querySelector("#userStatusDisplay").innerHTML = localStorage.getItem("userStatus");
+document.querySelector("#userProfilePicDisplay").src = localStorage.getItem("userProfilePic");
 
 
 var sampleMessage = {
