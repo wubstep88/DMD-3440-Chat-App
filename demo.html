@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="theme-color" content="#f00" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DMD 3440 - Room of Chat Demo</title>
+        <link rel="manifest" href="manifest.json?version=2">        
+        <style>
+            #chatLog {
+                max-height: 80vh;
+                overflow: scroll;
+            }
+
+            .myMessage {
+                position: fixed;
+                width: 100%;
+                bottom: 0px;
+            }
+
+            #sendButton {
+                max-height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="chatLog"></div>
+        <div>My Profile pic: 
+            <input type="file" id="profilePic">
+            <button id="saveProfile">Save Profile Pic</button>
+            <img src =" " id="profilePicDisplay" alt="Picture of me">
+        </div>
+        <div class="myMessage">
+            <input type="text" id="inputBox">
+            <button id="sendButton">Send</button>
+        </div>
+
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+        <script src="firebase-config.js"></script>
+        <script src="register-sw.js"></script>
+
+        <script src="firebase-chat-functions.js"></script>
+        <script src="demo.js"></script>
+    </body>
+</html>

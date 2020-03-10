@@ -33,7 +33,8 @@ function makeAndDisplayMessage(sender, dateStamp, text) {
 
     chatBox.appendChild(newMsgP);
 
-    // Play message received tone
+    var audio = new Audio('message-tone.wav');
+    audio.play();
 
     // Vibration upon receiving messages
     window.navigator.vibrate(200);
