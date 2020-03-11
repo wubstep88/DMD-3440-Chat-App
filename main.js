@@ -1,3 +1,4 @@
+//var username = "Ben";
 document.querySelector("#usernameDisplay").innerHTML = localStorage.getItem("userName");
 document.querySelector("#userStatusDisplay").innerHTML = localStorage.getItem("userStatus");
 document.querySelector("#userProfilePicDisplay").src = localStorage.getItem("userProfilePic");
@@ -14,22 +15,45 @@ let chatBox = document.querySelector("#chatBox");
 
 console.log(allMessages);
 
-function makeAndDisplayMessage(sender, dateStamp, text) {
+watchFirebaseForChanges(
+  function(msg){
+
+      displayMessage(msg.data())
+  }
+);
+
+/*
+sendButton.addEventListener("click", function () {
+  var msgObj = {
+      dateStamp:Date.now(),
+      message: chatInput.value,
+      sentBy: usernameDisplay
+  }
+});*/
+
+/*
+function displayMessage(message){
+  var messageParagraph = document.createElement("p");
+  messageParagraph.innerHTML = message.dateStamp + " " + message.message + " " + message.sentBy;
+
+  chatBox.appendChild(messageParagraph);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+//function makeAndDisplayMessage(message) {
 
   // make message
-  var newMessage = {
-    sentBy: sender,
-    dateStamp: dateStamp,
-    text: text
-  }
+  //var newMessage = {
 
-  allMessages.push(newMessage);
+  //}
+
+
   // end make message
 
   // display message
 
-    var newMsgP = document.createElement("p");
-        newMsgP.innerHTML = "<strong>" + sender + "</strong>: " + text;
+var newMsgP = document.createElement("p");
+        newMsgP.innerHTML = "<strong>" + message.sentBy + "</strong>: " + message.message;
 
     chatBox.appendChild(newMsgP);
 
@@ -43,13 +67,41 @@ function makeAndDisplayMessage(sender, dateStamp, text) {
 
 
   console.log(allMessages);
-}
 
-document.querySelector("#sendBtn").addEventListener('click', function(){
 
-  makeAndDisplayMessage("me", "now", document.querySelector("#newMsg").value);
+document.querySelector("#sendButton").addEventListener('click', function(){
+
+  displayMessage("me", "now", document.querySelector("#newMsg").value);
 
   document.querySelector("#newMsg").value = "";
   document.querySelector("#newMsg").focus();
 
+});*/
+
+function displayMessage(message){
+  var messageParagraph = document.createElement("p");
+  messageParagraph.innerHTML = message.dateStamp + " " + message.message + " " + message.sentBy;
+
+  chatBox.appendChild(messageParagraph);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+/*
+watchFirebaseForChanges(
+  function(msg){
+      displayMessage(msg.data())
+  }
+);*/
+
+sendButton.addEventListener("click", function () {
+  var msgObj = {
+      dateStamp:Date.now(),
+      message: chatInput.value,
+      sentBy: usernameDisplay
+  }
+
+  saveMessageToFirebase(msgObj);
+
+  chatInput.value = " ";
+  chatInput.focus();
 });
