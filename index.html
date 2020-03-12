@@ -9,8 +9,10 @@
         <link rel="manifest" href="manifest.json?v=2">
     </head>
     <body>
+        <div id="sendAs">
         <header><h1>Sending messages as <img class="smallImage" src="#" id="userProfilePicDisplay"/><a href="profile.html"><span id="usernameDisplay">{UserName}</span></a> <span class="small" id="userStatusDisplay">{Status}</span></h1></header>
-        
+        </div>
+
         <div id="chatBox"></div>
         <div id="chatInput">
             <input id="newMsg" type="text" placeholder="type a message!">
@@ -28,7 +30,7 @@
         <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
         <script src="firebase-config.js"></script>
         <script src="register-sw.js"></script>
-        <script src="firebase-chat-functions.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/joelsalisbury/firebase-chat-3440/firebase-chat-functions.js"></script>
 
         <script src="main.js"></script>
 

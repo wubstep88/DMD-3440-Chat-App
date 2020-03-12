@@ -12,6 +12,8 @@ var sampleMessage = {
 
 let allMessages = [];
 let chatBox = document.querySelector("#chatBox");
+let chatInput = document.querySelector("#newMsg");
+
 
 console.log(allMessages);
 
@@ -84,6 +86,12 @@ function displayMessage(message){
 
   chatBox.appendChild(messageParagraph);
   chatBox.scrollTop = chatBox.scrollHeight;
+
+  var audio = new Audio('message-tone.wav');
+  audio.play();
+
+  // Vibration upon receiving messages
+  window.navigator.vibrate(200);
 }
 
 /*
@@ -95,11 +103,12 @@ watchFirebaseForChanges(
 
 sendButton.addEventListener("click", function () {
   var msgObj = {
-      dateStamp:Date.now(),
+      dateStamp: Date.now(),
       message: chatInput.value,
-      sentBy: usernameDisplay
+      sentBy: localStorage.getItem("userName")
   }
 
+  console.log(msgObj);
   saveMessageToFirebase(msgObj);
 
   chatInput.value = " ";
