@@ -5,13 +5,38 @@
         <meta name="theme-color" content="#f00" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Chatroom</title>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
         <link href="main.css" rel="stylesheet">
         <link rel="manifest" href="manifest.json?v=2">
     </head>
     <body>
         <div id="sendAs">
-        <header><h1>Sending messages as <img class="smallImage" src="#" id="userProfilePicDisplay"/><a href="profile.html"><span id="usernameDisplay">{UserName}</span></a> <span class="small" id="userStatusDisplay">{Status}</span></h1></header>
+            
+            <div class="headerTextContainer">
+                <header><h1 id = "trashTalk">Trash Talk </h1></header>
+            </div>
+            
+            <div class="profilePicContainer">
+                <a href="profile.html"><img class="smallImage" src="#" id="userProfilePicDisplay"/></a> 
+            </div>
+            
         </div>
+
+        <div id="statusBar">
+
+            <div id="usernameBox">
+                <h3><span id="usernameDisplay">{UserName}</span></h3>
+            </div>
+
+            <div id="userStatusBox">
+                <h3><span class="small" id="userStatusDisplay">{Status}</span></h3>
+            </div>
+           
+        </div>
+        
+        
+
+       
 
         <div id="chatBox"></div>
         <div id="chatInput">
