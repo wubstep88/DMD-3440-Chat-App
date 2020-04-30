@@ -81,8 +81,8 @@ document.querySelector("#sendButton").addEventListener('click', function(){
 });*/
 
 function displayMessage(message){
-  var messageParagraph = document.createElement("p");
-  messageParagraph.innerHTML = message.dateStamp + " " + message.message + " " + message.sentBy;
+  var messageParagraph = document.createElement("div");
+  messageParagraph.innerHTML = message.sentBy + "     at     " + message.dateStamp + "<br>" + message.message;
 
   chatBox.appendChild(messageParagraph);
   chatBox.scrollTop = chatBox.scrollHeight;

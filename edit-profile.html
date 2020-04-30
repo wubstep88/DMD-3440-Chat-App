@@ -4,29 +4,19 @@
         <meta charset="utf-8">
         <meta name="theme-color" content="#f00" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Profile</title>
+        <title>Edit Profile</title>
         <link href="main.css" rel="stylesheet">
         <link rel="manifest" href="manifest.json?version=2">
     </head>
     <body>
         
-        <header>
-            <div id="backBanner">
-                <div id="backBannerContainer">
-                    <a href="index.html"><h3>Back</h3></a>
-                </div>
-            </div>
-            <div id="profilePicLarge">
-                <img class="largeImage" src="#" id="userProfilePicDisplay"/>
-            </div>
-            </header>
+        <header><a href="index.html">Back</a><div id="editProfile"><h1>Edit Profile</h1></header></div>
         
         <div id="profileInfo">
             <p><input type="text" placeholder="Display Name" name="UserName" id="usernameInput"></p>
             <p><input type="text" placeholder="Status Message" name="StatusMessage" id="statusInput"></p>
             <p id="profileInput"><input type="file" id="profilePicInput" name="profilePicInput"></p>
-            
-            <!-- <a href="edit-profile.html"><button>Edit Profile</button></a> -->
+            <button id="profileSaveInput">Save Profile</button>
         </div>
 
         <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
