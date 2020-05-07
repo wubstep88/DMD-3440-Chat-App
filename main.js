@@ -81,11 +81,41 @@ document.querySelector("#sendButton").addEventListener('click', function(){
 });*/
 
 function displayMessage(message){
-  var messageParagraph = document.createElement("div");
-  messageParagraph.innerHTML = message.sentBy + "     at     " + message.dateStamp + "<br>" + message.message;
+  var stagedMessage = document.createElement("div");
+  var messageSpan = document.createElement("span");
+  var messageBubble = document.createElement("div");
+  messageBubble.setAttribute('class', 'messageBubble');
+  var messageParagraph = document.createElement("p");
+  var name = document.createElement("h2");
+  var timeStamp = document.createElement("h3");
 
-  chatBox.appendChild(messageParagraph);
-  chatBox.scrollTop = chatBox.scrollHeight;
+  let currentDate = new Date(message.dateStamp);
+  let month = currentDate.getMonth() + 1;
+  let dateString = month.toString() + "/" + currentDate.getDate().toString() + "/" + currentDate.getFullYear().toString();
+
+  let currentTime = new Date(message.dateStamp);
+  let timeString = currentTime.getHours().toString() + ":" + currentTime.getMinutes().toString();
+
+
+
+  name.innerHTML = message.sentBy;
+  messageParagraph.innerHTML = message.message
+  timeStamp.innerHTML = timeString + " on " + dateString;
+
+  // messageParagraph.innerHTML = + message.sentBy + "</strong>" + ": " + message.message + "<br>" + "at" + message.dateStamp;
+
+
+  messageBubble.appendChild(messageParagraph);
+
+  messageSpan.appendChild(name);
+  messageSpan.appendChild(messageBubble);
+  messageSpan.appendChild(timeStamp);
+  stagedMessage.appendChild(messageSpan);
+  chatBox.appendChild(stagedMessage);
+
+  stagedMessage.scrollIntoView();
+
+  // chatBox.scrollTop = chatBox.scrollHeight;
 
   var audio = new Audio('message-tone.wav');
   audio.play();
